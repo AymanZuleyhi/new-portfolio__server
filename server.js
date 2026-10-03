@@ -14,6 +14,8 @@ app.use(express.json()); // Parses incoming JSON data
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
+  console.log(name, email, message);
+
   // 1. Server-Side Validation (The Last Line of Defense)
   // Even if the frontend is bypassed, the server stays safe.
   if (!name || !email || !message) {
